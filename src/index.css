@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #F5F7F9;
+  --color-surface: #FFFFFF;
+  --color-border: #E4E8EC;
+  --color-text: #1E293B;
+  --color-muted: #64748B;
+  
+  --color-primary: #3D7A94;
+  --color-primary-hover: #336A82;
+  --color-primary-tint: #E8F1F5;
+
+  --color-success: #5E9C7E;
+  --color-success-tint: #E9F3EE;
+  
+  --color-warning: #C79A4B;
+  --color-warning-tint: #F8F1E3;
+  
+  --color-danger: #BC6A66;
+  --color-danger-tint: #F7EAE9;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-text);
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Tabular nums for coordinates and numbers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Leaflet container ───────────────────────────────────────────────────── */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background-color: #E2E8F0 !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* ── Tooltip ─────────────────────────────────────────────────────────────── */
+.sonar-tooltip,
+.leaflet-tooltip {
+  border: 1px solid #E4E8EC !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  padding: 8px 12px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+  background-color: #FFFFFF !important;
+}

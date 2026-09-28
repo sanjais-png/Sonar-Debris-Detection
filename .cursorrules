@@ -1,0 +1,11 @@
+# PERFORMANCE RULES FOR SONAR-TRACE
+
+1. Initial JS bundle MUST remain under 200 KB gzipped.
+2. All page routes MUST be lazy-loaded with React.lazy and wrapped in Suspense inside AppShell with PageSkeletonFallback.
+3. Leaflet and leaflet.markercluster MUST only load dynamically when map features render.
+4. Do NOT add new third-party npm packages without explicit permission.
+5. Use thumbnailUrl (max 320px) with loading="lazy" and explicit width/height in lists and tables. Full resolution imageUrl is only loaded on detail/verification pages.
+6. Enable preferCanvas: true in Leaflet and switch to L.circleMarker when detections count exceeds 500.
+7. Wrap ClassChip, ConfidenceBadge, StatusBadge, table rows, and map markers in React.memo.
+8. Debounce search inputs and sliders by 250 ms using useDebounce.
+9. Keep TanStack Query staleTime set to 60000 ms with refetchOnWindowFocus: false.
